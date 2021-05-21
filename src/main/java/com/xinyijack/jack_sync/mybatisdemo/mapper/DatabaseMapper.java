@@ -7,7 +7,7 @@ import java.util.List;
 public interface DatabaseMapper {
     @Select("SELECT * FROM db_info;")
     @Results({
-            @Result(property = "Id", column = "id"),
+            @Result(property = "dbId", column = "db_id"),
             @Result(property = "dbHost", column = "db_host"),
             @Result(property = "dbPort", column = "db_port"),
             @Result(property = "dbUsername", column = "db_username"),
@@ -19,7 +19,7 @@ public interface DatabaseMapper {
     List<DatabaseInfo> getAllDBInfo();
 
     /* 通过id查询备份信息 */
-    @Select("SELECT * FROM db_info WHERE id = #{Id};")
+    @Select("SELECT * FROM db_info WHERE db_id = #{dbId};")
     @Results({
             @Result(property = "dbId", column = "db_id"),
             @Result(property = "dbHost", column = "db_host"),
