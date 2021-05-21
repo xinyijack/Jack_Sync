@@ -11,7 +11,7 @@ public class RecoverInfo {
     private String rcId;
     private String tdbName;
     private String tdbTablename;
-    private String tdbBackupdate;
-    private String tdbBackuptype;
+    private String tdbRecoverdate;
+    private String tdbRecovertype;
     private String tdbRecoverstatus;
 }

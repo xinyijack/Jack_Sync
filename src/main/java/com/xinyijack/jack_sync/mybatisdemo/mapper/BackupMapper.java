@@ -34,7 +34,7 @@ public interface BackupMapper {
     int insertBackupInfo(BackupInfo backupInfo);
 
     /* 修改操作 */
-    @Update("UPDATE backup_info SET tdb_name=#{tdbName},tdb_tablename=#{tdbTablename},tdb_backupdate=#{tdbBackupdate},tdb_backuptype=#{tdbBackuptype},tdb_backupstatus=#{tdbBackupstatus} WHERE bp_id =#{bpId};")
+    @Update("UPDATE backup_info SET tdb_name=#{tdbName},tdb_tablename=#{tdbTablename},tdb_backuptype=#{tdbBackuptype},tdb_backupstatus=#{tdbBackupstatus} WHERE bp_id=#{bpId};")
     int updateBackupInfo(BackupInfo backupInfo);
 
     /* 删除操作 */

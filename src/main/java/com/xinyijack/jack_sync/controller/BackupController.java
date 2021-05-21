@@ -40,7 +40,7 @@ public class BackupController {
         String bpId = uuIdGenId.getUUID32();
         backupInfo.setBpId(bpId);
         backupInfo.setTdbBackupdate(backuptime);
-        int num = backupMapper.insertBackupInfo(backupInfo);
+        backupMapper.insertBackupInfo(backupInfo);
         System.out.println("finished!");
     }
 }

@@ -33,7 +33,7 @@ public interface RecoverMapper {
     int insertRecoverInfo(RecoverInfo recoverInfo);
 
     /* 修改操作 */
-    @Update("UPDATE recover_info SET tdb_name=#{tdbName},tdb_tablename=#{tdbTablename},tdb_recoverdate=#{tdbRecoverdate},tdb_recovertype=#{tdbRecovertype},tdb_recoverstatus=#{tdbRecoverstatus} WHERE rc_id =#{rcId};")
+    @Update("UPDATE recover_info SET tdb_name=#{tdbName},tdb_tablename=#{tdbTablename},tdb_recovertype=#{tdbRecovertype},tdb_recoverstatus=#{tdbRecoverstatus} WHERE rc_id =#{rcId};")
     int updateRecoverInfo(RecoverInfo recoverInfo);
 
     /* 删除操作 */
