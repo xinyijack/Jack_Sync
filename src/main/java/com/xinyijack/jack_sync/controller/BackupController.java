@@ -18,19 +18,19 @@ import java.io.IOException;
 @RestController
 public class BackupController {
     @Autowired
-    DatabaseMapper databaseMapper;
+    private DatabaseMapper databaseMapper;
 
     @Autowired
-    BackupMapper backupMapper;
+    private BackupMapper backupMapper;
 
     @Autowired
     BackupInfo backupInfo;
 
     @Autowired
-    DateUtil dateUtil;
+    private DateUtil dateUtil;
 
     @Autowired
-    UUIdGenId uuIdGenId;
+    private UUIdGenId uuIdGenId;
 
     @PostMapping(value = "/backup/{dbId}")
     public void DatabaseBackup (BackupInfo backupInfo, @PathVariable("dbId") String id) throws IOException, InterruptedException {

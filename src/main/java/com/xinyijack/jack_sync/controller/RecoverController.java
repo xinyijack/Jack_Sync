@@ -16,13 +16,11 @@ import java.io.IOException;
 
 @RestController
 public class RecoverController {
-
+    @Autowired
+    RecoverMapper recoverMapper;
 
     @Autowired
     DatabaseMapper databaseMapper;
-
-    @Autowired
-    RecoverMapper recoverMapper;
 
     @Autowired
     RecoverInfo recoverInfo;
