@@ -16,6 +16,8 @@ import java.io.IOException;
 
 @RestController
 public class RecoverController {
+
+
     @Autowired
     DatabaseMapper databaseMapper;
 
@@ -31,10 +33,10 @@ public class RecoverController {
     @Autowired
     UUIdGenId uuIdGenId;
 
-    @PostMapping("/recover/{rcId}")
-    public void DatabaseBackup (RecoverInfo recoverInfo, @PathVariable("rcId") String id) throws IOException, InterruptedException {
+    @PostMapping("/recover/{dbId}")
+    public void DatabaseBackup (RecoverInfo recoverInfo, @PathVariable("dbId") String id) throws IOException, InterruptedException {
         DatabaseInfo recoverDatabaseInfo = databaseMapper.getDBInfo(id);
-        DatabaseUtil.backup(recoverDatabaseInfo.getDbHost(), recoverDatabaseInfo.getDbUsername(), recoverDatabaseInfo.getDbPassword(), recoverDatabaseInfo.getDbDatabase(), recoverDatabaseInfo.getDbOutputfile(), recoverDatabaseInfo.getDbFilename());
+        DatabaseUtil.recover(recoverDatabaseInfo.getDbHost(), recoverDatabaseInfo.getDbUsername(), recoverDatabaseInfo.getDbPassword(), recoverDatabaseInfo.getDbDatabase(), recoverDatabaseInfo.getDbOutputfile(), recoverDatabaseInfo.getDbFilename());
         String recovertime = dateUtil.getDataNowStr();
         String rcId = uuIdGenId.getUUID32();
         recoverInfo.setRcId(rcId);
