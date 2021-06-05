@@ -35,7 +35,7 @@ public class BackupController {
     @PostMapping(value = "/backup/{dbId}")
     public void DatabaseBackup (BackupInfo backupInfo, @PathVariable("dbId") String id) throws IOException, InterruptedException {
         DatabaseInfo backupDatabaseInfo = databaseMapper.getDBInfo(id);
-        DatabaseUtil.backup(backupDatabaseInfo.getDbHost(), backupDatabaseInfo.getDbUsername(), backupDatabaseInfo.getDbPassword(), backupDatabaseInfo.getDbDatabase(), backupDatabaseInfo.getDbOutputfile(), backupDatabaseInfo.getDbFilename());
+        DatabaseUtil.entirelyBackup(backupDatabaseInfo.getDbHost(), backupDatabaseInfo.getDbUsername(), backupDatabaseInfo.getDbPassword(), backupDatabaseInfo.getDbDatabase(), backupDatabaseInfo.getDbOutputfile(), backupDatabaseInfo.getDbFilename());
         String backuptime = dateUtil.getDataNowStr();
         String bpId = uuIdGenId.getUUID32();
         backupInfo.setBpId(bpId);
